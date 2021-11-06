@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { GithubContext } from '../context/context';
 import { GoRepo, GoGist } from 'react-icons/go';
 import { FiUsers, FiUserPlus} from 'react-icons/fi';

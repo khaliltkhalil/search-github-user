@@ -36,7 +36,7 @@ const GithubProvider = ({ children }) => {
 					])
 
 
-				console.log(repos_data, followers_data);
+				//console.log(repos_data, followers_data);
 				if (repos_data.status ==='fulfilled') {
 					setRepos(repos_data.value);
 				}
@@ -79,8 +79,9 @@ const GithubProvider = ({ children }) => {
 				
 				const { rate } = await response.json();
 				let { used } = rate;
+				
 				setRequests(used);
-				if (used == 60 ) {
+				if (used === 60 ) {
 					//throw an error
 					toggleError(true,
 						 'sorry, you have exceeded your hourly rate limit');
@@ -96,7 +97,9 @@ const GithubProvider = ({ children }) => {
 		setError({show, msg});
 	}
 
-	useEffect(checkRequest,[]);
+	useEffect(() => {
+		checkRequest();
+	},[]);
 
 
 	return (

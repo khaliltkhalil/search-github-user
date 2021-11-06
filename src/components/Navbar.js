@@ -8,8 +8,7 @@ const Navbar = () => {
 		isAuthenticated,
 		loginWithRedirect,
 		logout,
-		user,
-		isLoading
+		user
 	} = useAuth0();
 	return (
 		<Wrapper>
